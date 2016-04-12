@@ -1,0 +1,1096 @@
+@charset "UTF-8";
+/* =========================================================
+* team2work - main file
+* Handcrafted by Markus Danek <markus.danek@gmail.com>
+* Last updated on 04.04.2016
+* =========================================================
+* Contents:
+*   01    Util
+*    1.1  Variables
+*    1.2  REM Function
+*    1.3  Typography
+*    1.4  Color
+*    1.5  Mixins
+*    1.6  Hero
+*   02    Layout
+*    2.1  Basic
+*    2.2  Header
+*    2.3  Footer
+*   03    Templates
+*    3.1  Home
+*    3.2  About
+*    3.3  Impress
+*    3.4  Company
+*    3.5  Contact
+*    3.6  Applicants
+*    3.7  Jobs
+*    3.8  Jobs Single
+* =========================================================
+*/
+/* ------------------------------------------------------------------------------------------------------------
+* 01 Util -----------------------------------------------------------------------------------------------------
+* ---------------------------------------------------------------------------------------------------------- */
+/* 01.1 - Variables */
+/* Small devices ~ Tablets (>= 767px) */
+/* Medium devices ~ Desktops (>= 992px) */
+/* Large devices ~ Desktops (>= 1200px) */
+/* 01.2 - REM Function */
+/* 01.3 - Typography */
+@font-face {
+  font-family: "ASans";
+  src: url("../fonts/ALSANREG/ALSANREG.eot");
+  src: url("../fonts/ALSANREG/ALSANREG.eot") format("embedded-opentype"), url("../fonts/ALSANREG/ALSANREG.svg") format("svg"), url("../fonts/ALSANREG/ALSANREG.woff") format("woff"), url("../fonts/ALSANREG/ALSANREG.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal; }
+
+@font-face {
+  font-family: "ASans";
+  src: url("../fonts/ALSANREG/ALSANREG.eot");
+  src: url("../fonts/ALSANREG/ALSANREG.eot") format("embedded-opentype"), url("../fonts/ALSANREG/ALSANREG.svg") format("svg"), url("../fonts/ALSANREG/ALSANREG.woff") format("woff"), url("../fonts/ALSANREG/ALSANREG.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal; }
+
+@font-face {
+  font-family: "ASans-Bold";
+  src: url("../fonts/ALSANBOL/ALSANBOL.eot");
+  src: url("../fonts/ALSANBOL/ALSANBOL.eot") format("embedded-opentype"), url("../fonts/ALSANBOL/ALSANBOL.svg#ALSANBOL") format("svg"), url("../fonts/ALSANBOL/ALSANBOL.woff") format("woff"), url("../fonts/ALSANBOL/ALSANBOL.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal; }
+
+@font-face {
+  font-family: "ASans-Italic";
+  src: url("../fonts/ALSANITA/ALSANITA.eot");
+  src: url("../fonts/ALSANITA/ALSANITA.eot") format("embedded-opentype"), url("../fonts/ALSANITA/ALSANITA.svg#ALSANITA") format("svg"), url("../fonts/ALSANITA/ALSANITA.woff") format("woff"), url("../fonts/ALSANITA/ALSANITA.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal; }
+
+@font-face {
+  font-family: "ASans-Light";
+  src: url("../fonts/ALSANLIG/ALSANLIG.eot");
+  src: url("../fonts/ALSANLIG/ALSANLIG.eot") format("embedded-opentype"), url("../fonts/ALSANLIG/ALSANLIG.svg#ALSANLIG") format("svg"), url("../fonts/ALSANLIG/ALSANLIG.woff") format("woff"), url("../fonts/ALSANLIG/ALSANLIG.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal; }
+
+a, p {
+  font-size: 18px;
+  font-size: 1rem;
+  line-height: 30px;
+  font-family: "ASans"; }
+
+ul li, ol li {
+  font-size: 18px;
+  font-size: 1rem;
+  line-height: 30px;
+  font-family: "ASans"; }
+
+button, button.btn {
+  font-size: 18px;
+  font-size: 1rem; }
+
+h1, h2, h3,
+h4, h5, h6 {
+  font-family: "ASans";
+  margin-top: 0;
+  margin-bottom: 0; }
+
+h1 {
+  font-size: 36px;
+  font-size: 2rem;
+  line-height: 46px; }
+
+h2 {
+  font-size: 30px;
+  font-size: 1.66667rem;
+  line-height: 33px; }
+
+h3 {
+  font-size: 24px;
+  font-size: 1.33333rem;
+  line-height: 30px; }
+
+h4 {
+  font-size: 18px;
+  font-size: 1rem;
+  line-height: 20px; }
+
+h5 {
+  font-size: 14px;
+  font-size: 0.77778rem;
+  line-height: 16px; }
+
+h6 {
+  font-size: 12px;
+  font-size: 0.66667rem;
+  line-height: 14px; }
+
+/* 01.4 - Colors */
+/* 01.5 - Mixins */
+/* Opacity for IE, FF, Chome, Safari */
+/* Transition for IE, FF, Chome, Safari */
+/* Keyframe for Chrome and Safari */
+@-webkit-keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0); }
+  40% {
+    -webkit-transform: translateY(-30px);
+    transform: translateY(-30px); }
+  60% {
+    -webkit-transform: translateY(-15px);
+    transform: translateY(-15px); } }
+
+/* Keyframe for Firefox */
+@-moz-keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -moz-transform: translateY(0);
+    transform: translateY(0); }
+  40% {
+    -moz-transform: translateY(-30px);
+    transform: translateY(-30px); }
+  60% {
+    -moz-transform: translateY(-15px);
+    transform: translateY(-15px); } }
+
+/* Bouncing Animation for IE, FF, Chome, Safari */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -webkit-transform: translateY(0);
+    transform: translateY(0); }
+  40% {
+    -moz-transform: translateY(-30px);
+    -ms-transform: translateY(-30px);
+    -webkit-transform: translateY(-30px);
+    transform: translateY(-30px); }
+  60% {
+    -moz-transform: translateY(-15px);
+    -ms-transform: translateY(-15px);
+    -webkit-transform: translateY(-15px);
+    transform: translateY(-15px); } }
+
+/* 01.6 - Hero */
+.section-hero {
+  width: auto;
+  height: 400px;
+  position: relative; }
+  .small.section-hero {
+    height: 200px; }
+  .section-hero .hero-image {
+    width: 100%;
+    background-color: #FE4444;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1; }
+    .section-hero .hero-image .image-src {
+      height: 100%;
+      background-position: center center;
+      background-repeat: no-repeat;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+      opacity: 0.5; }
+  .section-hero .hero-text {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    justify-content: center; }
+    .section-hero .hero-text .text {
+      -webkit-align-self: center;
+      -moz-align-self: center;
+      -ms-flex-item-align: center;
+      align-self: center; }
+      .section-hero .hero-text .text h1 {
+        margin-bottom: 20px;
+        margin-bottom: 1.11111rem;
+        color: #FFFFFF;
+        text-align: center; }
+        .section-hero .hero-text .text h1 a {
+          text-decoration: none;
+          color: inherit; }
+      .section-hero .hero-text .text h2 {
+        margin-bottom: 20px;
+        margin-bottom: 1.11111rem;
+        color: #FFFFFF;
+        text-align: center; }
+        .section-hero .hero-text .text h2 a {
+          text-decoration: none;
+          color: inherit; }
+
+/* ------------------------------------------------------------------------------------------------------------
+* 02 Layout ---------------------------------------------------------------------------------------------------
+* ---------------------------------------------------------------------------------------------------------- */
+/* 02.1 - Basic */
+html, body {
+  overflow-x: hidden;
+  overflow-y: auto; }
+
+html {
+  -webkit-font-smoothing: antialiased;
+  font-size: 18px;
+  position: relative;
+  min-height: 100%; }
+
+body {
+  padding-top: 80px;
+  padding-top: 4.44444rem;
+  font-family: "ASans", "Helvetica Neue", "Helvetica", "Arial", "sans-serif";
+  color: #4B4B4B;
+  border-right: 10px solid #CC0000;
+  background: #F9F9F9; }
+
+.container {
+  padding: 0;
+  padding: 0; }
+
+@media (min-width: 1200px) {
+  .container {
+    width: 1600px; } }
+
+span.two {
+  color: #CC0000; }
+
+/* 02.2 - Header */
+nav.navbar {
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+  margin: 0;
+  margin: 0;
+  background: transparent;
+  border-right: 10px solid #CC0000; }
+
+nav.navbar.scroll {
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+  background: #FFFFFF;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); }
+  nav.navbar.scroll .nav > li > a {
+    color: #4B4B4B; }
+    nav.navbar.scroll .nav > li > a:hover {
+      border-bottom: 1px solid #CC0000; }
+  nav.navbar.scroll h1 a.navbar-brand {
+    background: url("../images/logo/team2work.svg") no-repeat; }
+
+h1 a.navbar-brand {
+  text-indent: -999;
+  background: url("../images/logo/team2work-white.svg") no-repeat;
+  display: block;
+  width: 130px;
+  height: 79px; }
+
+.navbar-right {
+  margin: 15px 15px 0 0;
+  margin: 0.83333rem 0.83333rem 0 0; }
+
+.nav > li > a {
+  color: #FFFFFF; }
+  .nav > li > a:hover, .nav > li > a:focus {
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    background-color: transparent;
+    text-decoration: none;
+    color: #CC0000;
+    border-bottom: none; }
+
+.navbar-toggle {
+  margin-top: 23px;
+  margin-top: 1.27778rem; }
+  .navbar-toggle .icon-bar {
+    background-color: #CC0000; }
+
+/* 02.3 - Footer */
+.footer .content {
+  padding: 40px 0;
+  padding: 2.22222rem 0;
+  background: #F0F0F0;
+  color: #4B4B4B; }
+  .footer .content p.title {
+    font-weight: bold; }
+  .footer .content ul.links li {
+    display: block;
+    list-style-type: none; }
+    .footer .content ul.links li a {
+      font-size: 15px;
+      font-size: 0.83333rem;
+      color: #4B4B4B; }
+      .footer .content ul.links li a:hover {
+        border-bottom: 1px solid #CC0000;
+        text-decoration: none; }
+  .footer .content ul.contact li {
+    font-size: 15px;
+    font-size: 0.83333rem;
+    list-style-type: none; }
+  .footer .content .copy p {
+    font-size: 15px;
+    font-size: 0.83333rem; }
+    .footer .content .copy p span {
+      color: #CC0000; }
+
+/* ------------------------------------------------------------------------------------------------------------
+* 03 Templates ----------------------------------------------------------------------------------------
+* ---------------------------------------------------------------------------------------------------------- */
+/* 03.1 - Home */
+/* Opacity for IE, FF, Chome, Safari */
+/* Transition for IE, FF, Chome, Safari */
+/* Keyframe for Chrome and Safari */
+@-webkit-keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0); }
+  40% {
+    -webkit-transform: translateY(-30px);
+    transform: translateY(-30px); }
+  60% {
+    -webkit-transform: translateY(-15px);
+    transform: translateY(-15px); } }
+
+/* Keyframe for Firefox */
+@-moz-keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -moz-transform: translateY(0);
+    transform: translateY(0); }
+  40% {
+    -moz-transform: translateY(-30px);
+    transform: translateY(-30px); }
+  60% {
+    -moz-transform: translateY(-15px);
+    transform: translateY(-15px); } }
+
+/* Bouncing Animation for IE, FF, Chome, Safari */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -webkit-transform: translateY(0);
+    transform: translateY(0); }
+  40% {
+    -moz-transform: translateY(-30px);
+    -ms-transform: translateY(-30px);
+    -webkit-transform: translateY(-30px);
+    transform: translateY(-30px); }
+  60% {
+    -moz-transform: translateY(-15px);
+    -ms-transform: translateY(-15px);
+    -webkit-transform: translateY(-15px);
+    transform: translateY(-15px); } }
+
+.wrapper {
+  background: #FFFFFF; }
+
+.section-hero {
+  height: 600px; }
+  .section-hero h1.startpage {
+    font-size: 46px;
+    font-size: 2.55556rem;
+    line-height: 56px;
+    font-family: "ASans-Bold";
+    text-transform: uppercase; }
+  .section-hero h2.startpage {
+    font-size: 24px;
+    font-size: 1.33333rem;
+    font-family: "ASans-Light"; }
+  .section-hero .hero-image {
+    background-color: #000000;
+    top: -80px; }
+    .section-hero .hero-image .image-src {
+      opacity: 0.6; }
+
+.jobs-overview {
+  margin-bottom: 60px;
+  margin-bottom: 3.33333rem; }
+  .jobs-overview h2.title {
+    margin: 60px 0 40px 0;
+    margin: 3.33333rem 0 2.22222rem 0;
+    text-align: center;
+    font-weight: bold; }
+  .jobs-overview ul.jobs {
+    margin-top: 14px;
+    margin-top: 0.77778rem;
+    margin-bottom: 14px;
+    margin-bottom: 0.77778rem; }
+    .jobs-overview ul.jobs li {
+      margin-bottom: 30px;
+      margin-bottom: 1.66667rem;
+      padding: 10px 0 10px 20px;
+      padding: 0.55556rem 0 0.55556rem 1.11111rem;
+      background: #F0F0F0;
+      list-style-type: none; }
+      .jobs-overview ul.jobs li a {
+        color: #4B4B4B;
+        display: block;
+        width: 100%; }
+        .jobs-overview ul.jobs li a:hover {
+          text-decoration: none; }
+        .jobs-overview ul.jobs li a span {
+          font-size: 15px;
+          font-size: 0.83333rem;
+          margin-left: 5px;
+          margin-left: 0.27778rem; }
+      .jobs-overview ul.jobs li:hover {
+        background: #E6E6E6; }
+
+.service-overview {
+  margin: 60px auto 0px auto;
+  margin: 3.33333rem auto 0rem auto; }
+  .service-overview img.field-icons {
+    width: 100px;
+    height: 100px;
+    display: block;
+    margin: 0 auto 40px auto; }
+  .service-overview h2.title {
+    margin: 0px 0 40px 0;
+    margin: 0rem 0 2.22222rem 0;
+    text-align: center;
+    font-weight: bold; }
+  .service-overview .text {
+    margin-top: 50px;
+    margin-top: 2.77778rem;
+    margin-bottom: 50px;
+    margin-bottom: 2.77778rem; }
+    .service-overview .text h3, .service-overview .text p {
+      text-align: center;
+      display: block; }
+    .service-overview .text span {
+      text-align: center; }
+    .service-overview .text h3 {
+      margin-bottom: 20px;
+      margin-bottom: 1.11111rem;
+      color: #4B4B4B; }
+
+.testimonial {
+  background: #4B4B4B; }
+  .testimonial #quote-carousel {
+    color: #FFFFFF;
+    padding: 60px 10px 60px 10px;
+    margin-top: 30px; }
+    .testimonial #quote-carousel .carousel-control {
+      background: none;
+      color: #FFFFFF;
+      font-size: 2.3em;
+      text-shadow: none;
+      margin-top: 125px; }
+    .testimonial #quote-carousel .carousel-control.left {
+      left: -60px; }
+    .testimonial #quote-carousel .carousel-control.right {
+      right: -60px; }
+    .testimonial #quote-carousel .carousel-indicators {
+      right: 50%;
+      top: auto;
+      bottom: 0px;
+      margin-right: -19px; }
+    .testimonial #quote-carousel .carousel-indicators li {
+      width: 50px;
+      height: 50px;
+      margin: 5px;
+      cursor: pointer;
+      border: 4px solid #CCC;
+      border-radius: 50px;
+      opacity: 0.4;
+      overflow: hidden;
+      transition: all 0.4s; }
+  .testimonial .carousel-inner .item p {
+    font-size: 28px;
+    line-height: 34px; }
+  .testimonial .item blockquote {
+    border-left: none;
+    margin: 0; }
+
+/* 03.2 - About */
+/* Opacity for IE, FF, Chome, Safari */
+/* Transition for IE, FF, Chome, Safari */
+/* Keyframe for Chrome and Safari */
+@-webkit-keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0); }
+  40% {
+    -webkit-transform: translateY(-30px);
+    transform: translateY(-30px); }
+  60% {
+    -webkit-transform: translateY(-15px);
+    transform: translateY(-15px); } }
+
+/* Keyframe for Firefox */
+@-moz-keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -moz-transform: translateY(0);
+    transform: translateY(0); }
+  40% {
+    -moz-transform: translateY(-30px);
+    transform: translateY(-30px); }
+  60% {
+    -moz-transform: translateY(-15px);
+    transform: translateY(-15px); } }
+
+/* Bouncing Animation for IE, FF, Chome, Safari */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -webkit-transform: translateY(0);
+    transform: translateY(0); }
+  40% {
+    -moz-transform: translateY(-30px);
+    -ms-transform: translateY(-30px);
+    -webkit-transform: translateY(-30px);
+    transform: translateY(-30px); }
+  60% {
+    -moz-transform: translateY(-15px);
+    -ms-transform: translateY(-15px);
+    -webkit-transform: translateY(-15px);
+    transform: translateY(-15px); } }
+
+.about-photos {
+  padding-top: 60px;
+  padding-bottom: 60px; }
+  .about-photos h2.title {
+    margin-bottom: 60px;
+    font-weight: bold;
+    text-align: center; }
+  .about-photos img.photo {
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    display: block;
+    margin: 0 auto;
+    width: 150px;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%); }
+    .about-photos img.photo:hover {
+      -webkit-transition: all 0.3s ease;
+      -moz-transition: all 0.3s ease;
+      -ms-transition: all 0.3s ease;
+      -o-transition: all 0.3s ease;
+      transition: all 0.3s ease;
+      -webkit-filter: grayscale(0%);
+      filter: grayscale(0%); }
+  .about-photos h4 {
+    margin: 30px 0 30px 0;
+    text-align: center;
+    font-weight: bold; }
+    .about-photos h4 span {
+      font-size: 15px; }
+  .about-photos p {
+    font-size: 15px;
+    text-align: center;
+    margin: 0; }
+
+.about-text {
+  padding-top: 60px;
+  padding-bottom: 60px; }
+  .about-text h2 {
+    margin-bottom: 20px;
+    font-weight: bold; }
+  .about-text .who-is-behind {
+    margin-bottom: 60px; }
+  .about-text .double-power {
+    margin-top: 60px;
+    margin-bottom: 60px; }
+    .about-text .double-power h2 {
+      color: #CC0000;
+      text-align: right; }
+    .about-text .double-power p {
+      text-align: right; }
+  .about-text .solution-practicable {
+    margin-top: 60px; }
+
+/* 03.3 - Impress */
+/* Opacity for IE, FF, Chome, Safari */
+/* Transition for IE, FF, Chome, Safari */
+/* Keyframe for Chrome and Safari */
+@-webkit-keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0); }
+  40% {
+    -webkit-transform: translateY(-30px);
+    transform: translateY(-30px); }
+  60% {
+    -webkit-transform: translateY(-15px);
+    transform: translateY(-15px); } }
+
+/* Keyframe for Firefox */
+@-moz-keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -moz-transform: translateY(0);
+    transform: translateY(0); }
+  40% {
+    -moz-transform: translateY(-30px);
+    transform: translateY(-30px); }
+  60% {
+    -moz-transform: translateY(-15px);
+    transform: translateY(-15px); } }
+
+/* Bouncing Animation for IE, FF, Chome, Safari */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -webkit-transform: translateY(0);
+    transform: translateY(0); }
+  40% {
+    -moz-transform: translateY(-30px);
+    -ms-transform: translateY(-30px);
+    -webkit-transform: translateY(-30px);
+    transform: translateY(-30px); }
+  60% {
+    -moz-transform: translateY(-15px);
+    -ms-transform: translateY(-15px);
+    -webkit-transform: translateY(-15px);
+    transform: translateY(-15px); } }
+
+.impressum {
+  padding: 60px 0;
+  padding: 3.33333rem 0; }
+  .impressum .impress {
+    padding: 0px 0 30px 0;
+    padding: 0rem 0 1.66667rem 0; }
+    .impressum .impress h3 {
+      margin-bottom: 20px;
+      margin-bottom: 1.11111rem;
+      font-weight: bold; }
+    .impressum .impress ul li {
+      list-style-type: none;
+      font-weight: bold; }
+      .impressum .impress ul li a {
+        color: #4B4B4B; }
+        .impressum .impress ul li a span {
+          font-weight: normal; }
+      .impressum .impress ul li span {
+        font-weight: normal; }
+  .impressum .single-text {
+    padding: 30px 0 30px 0;
+    padding: 1.66667rem 0 1.66667rem 0; }
+    .impressum .single-text h3 {
+      margin-bottom: 20px;
+      margin-bottom: 1.11111rem;
+      font-weight: bold; }
+    .impressum .single-text.media p {
+      font-weight: bold; }
+
+/* 03.4 - Company */
+/* Opacity for IE, FF, Chome, Safari */
+/* Transition for IE, FF, Chome, Safari */
+/* Keyframe for Chrome and Safari */
+@-webkit-keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0); }
+  40% {
+    -webkit-transform: translateY(-30px);
+    transform: translateY(-30px); }
+  60% {
+    -webkit-transform: translateY(-15px);
+    transform: translateY(-15px); } }
+
+/* Keyframe for Firefox */
+@-moz-keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -moz-transform: translateY(0);
+    transform: translateY(0); }
+  40% {
+    -moz-transform: translateY(-30px);
+    transform: translateY(-30px); }
+  60% {
+    -moz-transform: translateY(-15px);
+    transform: translateY(-15px); } }
+
+/* Bouncing Animation for IE, FF, Chome, Safari */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -webkit-transform: translateY(0);
+    transform: translateY(0); }
+  40% {
+    -moz-transform: translateY(-30px);
+    -ms-transform: translateY(-30px);
+    -webkit-transform: translateY(-30px);
+    transform: translateY(-30px); }
+  60% {
+    -moz-transform: translateY(-15px);
+    -ms-transform: translateY(-15px);
+    -webkit-transform: translateY(-15px);
+    transform: translateY(-15px); } }
+
+.company,
+.applicants {
+  padding-bottom: 60px;
+  padding-bottom: 3.33333rem; }
+  .company .navtabs,
+  .applicants .navtabs {
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    display: block; }
+  .company ul.nav.nav-tabs,
+  .applicants ul.nav.nav-tabs {
+    margin: 30px auto 30px auto;
+    margin: 1.66667rem auto 1.66667rem auto;
+    border: none; }
+    .company ul.nav.nav-tabs h4,
+    .applicants ul.nav.nav-tabs h4 {
+      font-weight: bold;
+      text-transform: uppercase; }
+    .company ul.nav.nav-tabs li,
+    .applicants ul.nav.nav-tabs li {
+      float: none;
+      margin-bottom: 0; }
+      .company ul.nav.nav-tabs li a,
+      .applicants ul.nav.nav-tabs li a {
+        padding: 20px 15px;
+        padding: 1.11111rem 0.83333rem;
+        color: #4B4B4B;
+        border: none;
+        border-bottom: 1px solid #CC0000; }
+      .company ul.nav.nav-tabs li.active a,
+      .applicants ul.nav.nav-tabs li.active a {
+        font-weight: bold; }
+  .company .text .section,
+  .applicants .text .section {
+    padding: 30px 0 15px 0;
+    padding: 1.66667rem 0 0.83333rem 0; }
+    .company .text .section h2,
+    .applicants .text .section h2 {
+      margin-bottom: 20px;
+      margin-bottom: 1.11111rem;
+      font-weight: bold;
+      color: #CC0000; }
+    .company .text .section ul li,
+    .applicants .text .section ul li {
+      list-style-type: square; }
+  .company .open-questions,
+  .applicants .open-questions {
+    padding: 30px;
+    padding: 1.66667rem;
+    background: #F0F0F0; }
+    .company .open-questions h2 ,
+    .applicants .open-questions h2  {
+      text-align: center;
+      margin-bottom: 20px;
+      margin-bottom: 1.11111rem;
+      font-weight: bold; }
+
+/* 03.5 - Contact */
+/* Opacity for IE, FF, Chome, Safari */
+/* Transition for IE, FF, Chome, Safari */
+/* Keyframe for Chrome and Safari */
+@-webkit-keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0); }
+  40% {
+    -webkit-transform: translateY(-30px);
+    transform: translateY(-30px); }
+  60% {
+    -webkit-transform: translateY(-15px);
+    transform: translateY(-15px); } }
+
+/* Keyframe for Firefox */
+@-moz-keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -moz-transform: translateY(0);
+    transform: translateY(0); }
+  40% {
+    -moz-transform: translateY(-30px);
+    transform: translateY(-30px); }
+  60% {
+    -moz-transform: translateY(-15px);
+    transform: translateY(-15px); } }
+
+/* Bouncing Animation for IE, FF, Chome, Safari */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -webkit-transform: translateY(0);
+    transform: translateY(0); }
+  40% {
+    -moz-transform: translateY(-30px);
+    -ms-transform: translateY(-30px);
+    -webkit-transform: translateY(-30px);
+    transform: translateY(-30px); }
+  60% {
+    -moz-transform: translateY(-15px);
+    -ms-transform: translateY(-15px);
+    -webkit-transform: translateY(-15px);
+    transform: translateY(-15px); } }
+
+.contact-maps {
+  padding: 60px 0;
+  padding: 3.33333rem 0; }
+  .contact-maps .info .item {
+    margin-bottom: 60px;
+    margin-bottom: 3.33333rem; }
+    .contact-maps .info .item h2 {
+      margin-bottom: 20px;
+      margin-bottom: 1.11111rem;
+      font-weight: bold;
+      color: #CC0000; }
+    .contact-maps .info .item ul li {
+      list-style-type: none; }
+      .contact-maps .info .item ul li span {
+        display: inline; }
+      .contact-maps .info .item ul li.t2w  {
+        font-weight: bold; }
+  .contact-maps .maps iframe {
+    width: 100%;
+    height: 500px;
+    border: none; }
+
+/* 03.6 - Applicants */
+/* Opacity for IE, FF, Chome, Safari */
+/* Transition for IE, FF, Chome, Safari */
+/* Keyframe for Chrome and Safari */
+@-webkit-keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0); }
+  40% {
+    -webkit-transform: translateY(-30px);
+    transform: translateY(-30px); }
+  60% {
+    -webkit-transform: translateY(-15px);
+    transform: translateY(-15px); } }
+
+/* Keyframe for Firefox */
+@-moz-keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -moz-transform: translateY(0);
+    transform: translateY(0); }
+  40% {
+    -moz-transform: translateY(-30px);
+    transform: translateY(-30px); }
+  60% {
+    -moz-transform: translateY(-15px);
+    transform: translateY(-15px); } }
+
+/* Bouncing Animation for IE, FF, Chome, Safari */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -webkit-transform: translateY(0);
+    transform: translateY(0); }
+  40% {
+    -moz-transform: translateY(-30px);
+    -ms-transform: translateY(-30px);
+    -webkit-transform: translateY(-30px);
+    transform: translateY(-30px); }
+  60% {
+    -moz-transform: translateY(-15px);
+    -ms-transform: translateY(-15px);
+    -webkit-transform: translateY(-15px);
+    transform: translateY(-15px); } }
+
+.applicants #erfolgsgeschichten h2 {
+  margin: 30px 0;
+  margin: 1.66667rem 0;
+  font-weight: bold;
+  color: #CC0000; }
+
+.applicants #erfolgsgeschichten .story-single .picture img {
+  margin: 0 auto 10px auto;
+  margin: 0 auto 0.55556rem auto;
+  display: block; }
+
+.applicants #erfolgsgeschichten .story-single .picture p {
+  text-align: center;
+  font-style: italic; }
+
+.applicants #erfolgsgeschichten h3.own-story {
+  margin: 100px 0 50px 0;
+  margin: 5.55556rem 0 2.77778rem 0;
+  padding: 20px 10px;
+  padding: 1.11111rem 0.55556rem;
+  background: #F0F0F0;
+  text-align: center;
+  font-weight: bold;
+  line-height: 38px; }
+
+/* 03.7 - Jobs */
+/* Opacity for IE, FF, Chome, Safari */
+/* Transition for IE, FF, Chome, Safari */
+/* Keyframe for Chrome and Safari */
+@-webkit-keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0); }
+  40% {
+    -webkit-transform: translateY(-30px);
+    transform: translateY(-30px); }
+  60% {
+    -webkit-transform: translateY(-15px);
+    transform: translateY(-15px); } }
+
+/* Keyframe for Firefox */
+@-moz-keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -moz-transform: translateY(0);
+    transform: translateY(0); }
+  40% {
+    -moz-transform: translateY(-30px);
+    transform: translateY(-30px); }
+  60% {
+    -moz-transform: translateY(-15px);
+    transform: translateY(-15px); } }
+
+/* Bouncing Animation for IE, FF, Chome, Safari */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -webkit-transform: translateY(0);
+    transform: translateY(0); }
+  40% {
+    -moz-transform: translateY(-30px);
+    -ms-transform: translateY(-30px);
+    -webkit-transform: translateY(-30px);
+    transform: translateY(-30px); }
+  60% {
+    -moz-transform: translateY(-15px);
+    -ms-transform: translateY(-15px);
+    -webkit-transform: translateY(-15px);
+    transform: translateY(-15px); } }
+
+.jobs-list {
+  padding: 60px 0;
+  padding: 3.33333rem 0; }
+  .jobs-list table.table tbody tr > td {
+    vertical-align: middle; }
+  .jobs-list table.table tbody tr {
+    height: 80px; }
+    .jobs-list table.table tbody tr td.jobtitle a {
+      color: #CC0000;
+      font-weight: bold;
+      cursor: pointer; }
+    .jobs-list table.table tbody tr td p {
+      font-size: 14px;
+      font-size: 0.77778rem;
+      max-width: 600px; }
+    .jobs-list table.table tbody tr:hover {
+      background: #F0F0F0; }
+  .jobs-list .searching-qualifications {
+    padding: 20px;
+    padding: 1.11111rem;
+    background: #F0F0F0; }
+    .jobs-list .searching-qualifications h4 {
+      margin-bottom: 20px;
+      margin-bottom: 1.11111rem;
+      font-weight: bold; }
+    .jobs-list .searching-qualifications ul li {
+      list-style-type: square; }
+
+/* 03.8 - Jobs Single */
+/* Opacity for IE, FF, Chome, Safari */
+/* Transition for IE, FF, Chome, Safari */
+/* Keyframe for Chrome and Safari */
+@-webkit-keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0); }
+  40% {
+    -webkit-transform: translateY(-30px);
+    transform: translateY(-30px); }
+  60% {
+    -webkit-transform: translateY(-15px);
+    transform: translateY(-15px); } }
+
+/* Keyframe for Firefox */
+@-moz-keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -moz-transform: translateY(0);
+    transform: translateY(0); }
+  40% {
+    -moz-transform: translateY(-30px);
+    transform: translateY(-30px); }
+  60% {
+    -moz-transform: translateY(-15px);
+    transform: translateY(-15px); } }
+
+/* Bouncing Animation for IE, FF, Chome, Safari */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -webkit-transform: translateY(0);
+    transform: translateY(0); }
+  40% {
+    -moz-transform: translateY(-30px);
+    -ms-transform: translateY(-30px);
+    -webkit-transform: translateY(-30px);
+    transform: translateY(-30px); }
+  60% {
+    -moz-transform: translateY(-15px);
+    -ms-transform: translateY(-15px);
+    -webkit-transform: translateY(-15px);
+    transform: translateY(-15px); } }
+
+.jobs-single {
+  padding: 60px 0;
+  padding: 3.33333rem 0; }
+  .jobs-single .job-detail .block h3 {
+    margin-bottom: 20px;
+    margin-bottom: 1.11111rem;
+    color: #CC0000; }
+  .jobs-single .job-detail .block ul li {
+    list-style-type: square; }
+  .jobs-single .job-detail .block.title h2 {
+    padding: 20px 0;
+    padding: 1.11111rem 0;
+    font-weight: bold;
+    text-align: center; }
+  .jobs-single .more-info {
+    padding: 20px;
+    padding: 1.11111rem;
+    background: #F0F0F0; }
+    .jobs-single .more-info h4 {
+      margin-bottom: 20px;
+      margin-bottom: 1.11111rem;
+      font-weight: bold; }
+    .jobs-single .more-info ul li {
+      list-style-type: none;
+      font-weight: bold; }
+      .jobs-single .more-info ul li span {
+        font-weight: normal; }
+      .jobs-single .more-info ul li.overpayment {
+        font-size: 14px;
+        font-size: 0.77778rem;
+        margin-top: 10px;
+        margin-top: 0.55556rem;
+        font-weight: normal;
+        font-style: italic; }
+      .jobs-single .more-info ul li.jobtitle {
+        color: #CC0000; }
+        .jobs-single .more-info ul li.jobtitle span {
+          color: #4B4B4B; }
+  .jobs-single .apply-section {
+    margin-top: 60px;
+    margin-top: 3.33333rem; }

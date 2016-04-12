@@ -1,0 +1,88 @@
+<!-- Hero Image -->
+<div class="section-hero small">
+  <div class="hero-image">
+    <div class="image-src" style="background-image: url('assets/images/hero/hero-applicants.jpg')"></div>
+  </div>
+  <div class="container">
+    <div class="hero-text">
+      <div class="text container">
+        <h1 class="startpage">
+          Dürfen wir einander vorstellen?
+        </h1>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Jobs Overview -->
+<div class="wrapper">
+  <div class="jobs-single container">
+    <div class="row">
+      <div class="col-sm-11 col-sm-offset-1">
+        <div class="row">
+          <div class="job-detail col-sm-6">
+            <div class="intro block">
+              <p>
+                {{job.introText}}
+              </p>
+            </div>
+            <div class="title block">
+              <h2>
+                {{job.title}}
+              </h2>
+            </div>
+            <hr />
+            <div class="working-info block">
+              <h3>Aufgabenbereich</h3>
+              <ul ng-repeat="response in responsibility">
+                <li>{{response}}</li>
+              </ul>
+            </div>
+            <hr />
+            <div class="qualifications block">
+              <h3>Anforderungen:</h3>
+              <ul ng-repeat="quali in qualifications">
+                <li>{{quali}}</li>
+              </ul>
+            </div>
+          </div>
+          <div class="more-info col-sm-4 col-sm-offset-1">
+            <h4>Eckdaten:</h4>
+            <ul>
+              <li>
+                Jobtitel: <span>{{job.title}}</span>
+              </li>
+              <li>
+                Arbeitszeit: <span>{{job.hours}} Std. / Woche</span>
+              </li>
+              <li>
+                Arbeitsort: <span>{{job.area}}</span>
+              </li>
+              <li>
+                Bruttomonatsgehalt: <span>{{job.salary}},- *</span>
+              </li>
+              <li class="overpayment">
+                * Überzahlung je nach Erfahrung und Qualifikation möglich
+              </li>
+            </ul>
+          </div>
+          <div class="clearfix"></div>
+          <div class="apply-section col-sm-11">
+            <div class="waiting">
+              <p>
+                {{job.expectText}}
+              </p>
+            </div>
+            <hr />
+            <div class="apply-contact">
+              <p>
+                Wenn Sie Interesse an dieser herausfordernden Tätigkeit haben freuen wir uns über Ihre
+                aussagekräftigen Bewerbungsunterlagen mit Lebenslauf samt Foto an
+                <b>{{job.email}}</b> z.Hd. Frau {{job.contact}}.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

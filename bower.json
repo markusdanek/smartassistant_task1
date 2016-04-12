@@ -1,0 +1,25 @@
+{
+  "name": "smartassistant_task1",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Markus Danek <markus.danek@gmail.com>"
+  ],
+  "license": "ISC",
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "src/assets/vendor",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "latest",
+    "angular-route": "latest",
+    "bootstrap": "latest",
+    "jquery": "latest"
+  }
+}

@@ -1,0 +1,51 @@
+a, p {
+  font-size: 18px;
+  font-size: 1rem;
+  line-height: 30px;
+  font-family: "Helvetica Neue"; }
+
+ul li, ol li {
+  font-size: 18px;
+  font-size: 1rem;
+  line-height: 30px;
+  font-family: "Helvetica Neue"; }
+
+button, button.btn {
+  font-size: 18px;
+  font-size: 1rem; }
+
+h1, h2, h3,
+h4, h5, h6 {
+  font-family: "Helvetica Neue";
+  margin-top: 0;
+  margin-bottom: 0; }
+
+h1 {
+  font-size: 36px;
+  font-size: 2rem;
+  line-height: 46px; }
+
+h2 {
+  font-size: 30px;
+  font-size: 1.66667rem;
+  line-height: 33px; }
+
+h3 {
+  font-size: 24px;
+  font-size: 1.33333rem;
+  line-height: 30px; }
+
+h4 {
+  font-size: 18px;
+  font-size: 1rem;
+  line-height: 20px; }
+
+h5 {
+  font-size: 14px;
+  font-size: 0.77778rem;
+  line-height: 16px; }
+
+h6 {
+  font-size: 12px;
+  font-size: 0.66667rem;
+  line-height: 14px; }

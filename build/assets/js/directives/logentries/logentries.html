@@ -1,0 +1,29 @@
+<div class="row">
+  <div class="col-sm-12">
+    <div class="logentries-header">
+      <div class="col-sm-2">
+        <p>Datum</p>
+      </div>
+      <div class="col-sm-10">
+        <p>Uhrzeit</p>
+      </div>
+      <hr />
+    </div>
+    <ul ng-repeat="(day, item) in items">
+      <div class="col-sm-2">
+        <h4>{{ day | formatDay }}</h4>
+      </div>
+      <div class="col-sm-10">
+        <li title="{{ item.id }}">
+          {{ item.start | formatTime }} - <span ng-if="item.end !== null">{{ item.end | formatTime }}</span>
+          <span ng-if="item.end === null">...</span> = <span class="total-time">{{ item.totalTime | limitTo : 4 }}</span>
+          <span class="break-time">(Pause: {{ item.breakTime | limitTo: 4 }}) (Restzeit: {{ item.balanceTime | limitTo: 4 }} / {{ item.hoursToWork | limitTo: 4 }})</span>
+        </li>
+        <li ng-repeat="entry in item.entries" title="{{ entry.id }}" class="small">
+          {{ entry.start | formatTime }} - <span ng-if="entry.end !== null">{{ entry.end | formatTime }}</span>
+          <span ng-if="entry.end === null">...</span> = <span class="total-time">{{ entry.totalTime | limitTo : 4 }}</span>
+        </li>
+      </div>
+    <ul>
+  </div>
+</div>

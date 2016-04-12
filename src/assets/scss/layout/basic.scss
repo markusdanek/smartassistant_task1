@@ -1,0 +1,23 @@
+//
+// Basics
+//
+html, body {
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+html {
+	-webkit-font-smoothing: antialiased;
+	font-size: 18px;
+	position: relative;
+  min-height: 100%;
+}
+
+body {
+	font-family: $font-regular, "Helvetica Neue", "Helvetica", "Arial", "sans-serif";
+	color: $color-black-medium;
+}
+
+.container {
+	@include rem((padding: 0));
+}
