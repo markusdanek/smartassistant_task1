@@ -1,0 +1,80 @@
+.choose-glasses {
+  h3.title {
+    @include rem((margin: 20px 0));
+    color: $color-purple;
+    text-align: center;
+  }
+  .glasses-wizard {
+    ul {
+      @include rem((margin-top: 10px));
+      li {
+        display: inline-block;;
+        list-style-type: none;
+        &.arrow {
+          color: $color-white;
+          width: 210px;
+          height: 40px;
+          margin: 2px auto;
+          background: $color-purple;
+          position: relative;
+          line-height: 37px;
+          padding-left: 20px;
+          &.active {
+            background: rgba($color-purple, 0.5);
+          }
+        }
+        &.arrow::before {
+          content: '.';
+          text-indent: -9999;
+          position: absolute;
+          width: 0;
+          height: 0;
+          right: 0;
+          top: 0;
+          border-top: 21px solid $color-white;
+          border-bottom: 20px solid $color-white;
+          border-left: 15px solid $color-purple;
+        }
+        &.arrow.active::before {
+          border-left: 15px solid rgba($color-purple, 0);
+        }
+      }
+    }
+  }
+  .facial-structure {
+    .item {
+      img {
+        max-width: 100%;
+      }
+      .options {
+        background: $color-gray-light;
+        height: 50px;
+        input {
+          @include rem((margin: 20px 0 0 20px));
+        }
+        span.info {
+          @include rem((margin-left: 5px));
+          @include rem((padding: 5px 12px));
+          font-style: italic;
+          background: $color-purple;
+          border-radius: 50%;
+          color: $color-white;
+        }
+      }
+    }
+  }
+  .navigation {
+    position: relative;
+    top: 20px;
+    color: $color-purple;
+    text-transform: uppercase;
+    button {
+      background: $color-purple;
+      cursor: pointer;
+      color: $color-white;
+      border: none;
+      height: 30px;
+      width: 30px;
+    }
+  }
+}

@@ -1,0 +1,19 @@
+@import "util/color";
+@import "util/mixin";
+
+.header {
+  height: 150px;
+  background: url("../images/header-img.png") no-repeat right bottom;
+  background-size: 50%;
+  h1 {
+    @include rem((margin-top: 50px));
+    text-transform: uppercase;
+    color: $color-purple;
+    letter-spacing: 5px;
+  }
+  h2 {
+    @include rem((margin-top: 20px));
+    @include rem(font-size, 18px);
+    color: $color-purple;
+  }
+}
