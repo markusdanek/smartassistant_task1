@@ -1,45 +1,9 @@
 @import "rem";
-// Font-Face Setup
-@font-face {
-    font-family: "ASans";
-    src: url("../fonts/ALSANREG/ALSANREG.eot");
-    src: url("../fonts/ALSANREG/ALSANREG.eot") format("embedded-opentype"), url("../fonts/ALSANREG/ALSANREG.svg") format("svg"), url("../fonts/ALSANREG/ALSANREG.woff") format("woff"), url("../fonts/ALSANREG/ALSANREG.ttf") format("truetype");
-    font-weight: 400;
-    font-style: normal
-}
-@font-face {
-    font-family: "ASans";
-    src: url("../fonts/ALSANREG/ALSANREG.eot");
-    src: url("../fonts/ALSANREG/ALSANREG.eot") format("embedded-opentype"), url("../fonts/ALSANREG/ALSANREG.svg") format("svg"), url("../fonts/ALSANREG/ALSANREG.woff") format("woff"), url("../fonts/ALSANREG/ALSANREG.ttf") format("truetype");
-    font-weight: 400;
-    font-style: normal
-}
-@font-face {
-    font-family: "ASans-Bold";
-    src: url("../fonts/ALSANBOL/ALSANBOL.eot");
-    src: url("../fonts/ALSANBOL/ALSANBOL.eot") format("embedded-opentype"), url("../fonts/ALSANBOL/ALSANBOL.svg#ALSANBOL") format("svg"), url("../fonts/ALSANBOL/ALSANBOL.woff") format("woff"), url("../fonts/ALSANBOL/ALSANBOL.ttf") format("truetype");
-    font-weight: 400;
-    font-style: normal
-}
-@font-face {
-    font-family: "ASans-Italic";
-    src: url("../fonts/ALSANITA/ALSANITA.eot");
-    src: url("../fonts/ALSANITA/ALSANITA.eot") format("embedded-opentype"), url("../fonts/ALSANITA/ALSANITA.svg#ALSANITA") format("svg"), url("../fonts/ALSANITA/ALSANITA.woff") format("woff"), url("../fonts/ALSANITA/ALSANITA.ttf") format("truetype");
-    font-weight: 400;
-    font-style: normal
-}
-@font-face {
-    font-family: "ASans-Light";
-    src: url("../fonts/ALSANLIG/ALSANLIG.eot");
-    src: url("../fonts/ALSANLIG/ALSANLIG.eot") format("embedded-opentype"), url("../fonts/ALSANLIG/ALSANLIG.svg#ALSANLIG") format("svg"), url("../fonts/ALSANLIG/ALSANLIG.woff") format("woff"), url("../fonts/ALSANLIG/ALSANLIG.ttf") format("truetype");
-    font-weight: 400;
-    font-style: normal
-}
 
 $font-size-base: 18px;
 $font-line-height: 30px;
 
-$font-regular: "ASans";
+$font-regular: "Arial";
 
 a, p {
 	@include rem(font-size, 18px);

@@ -78,3 +78,114 @@
     }
   }
 }
+.personal-products {
+  @include rem((margin-top: 50px));
+  h1 {
+    @include rem(font-size, 24px);
+    background: $color-purple;
+    text-align: center;
+    color: $color-white;
+  }
+  .product-block {
+    @include rem((margin: 10px 0));
+    @include rem((padding: 10px));
+    border: 1px solid $color-gray-light;
+    .img {
+      img {
+        max-width: 100%;
+      }
+    }
+    .properties {
+      h3 {
+        border-bottom: 1px solid $color-gray-light;
+        text-transform: uppercase;
+      }
+      ul {
+        @include rem((margin: 5px 0));
+        @include rem((padding-left: 0));
+        li {
+          list-style-type: none;
+          display: block;
+          input[type=checkbox].css-checkbox {
+          	position:absolute;
+            z-index:-1000;
+            left:-1000px;
+            overflow: hidden;
+            clip: rect(0 0 0 0);
+            height:1px;
+            width:1px;
+            margin:-1px;
+            padding:0;
+            border:0;
+          }
+          input[type=checkbox].css-checkbox + label.css-label {
+          	padding-left:21px;
+          	height:16px;
+          	display:inline-block;
+          	line-height:16px;
+          	background-repeat:no-repeat;
+          	background-position: 0 0;
+          	font-size:16px;
+          	vertical-align:middle;
+          	cursor:pointer;
+          }
+          input[type=checkbox].css-checkbox:checked + label.css-label {
+          	background-position: 0 -16px;
+          }
+          label.css-label {
+          	background-image:url("/assets/images/checkbox-sprite.png");
+          	-webkit-touch-callout: none;
+          	-webkit-user-select: none;
+          	-khtml-user-select: none;
+          	-moz-user-select: none;
+          	-ms-user-select: none;
+          	user-select: none;
+          }
+        }
+      }
+      a {
+        font-weight: bold;
+        text-decoration: none;
+        color: $color-black-medium;
+        i {
+          color: $color-purple;
+        }
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+    .get-product {
+      .price {
+        @include rem((padding: 5px));
+        border: 1px solid $color-gray-light;
+        p {
+          @include rem(font-size, 22px);
+          text-align: center;
+          color: $color-purple;
+          font-weight: bold;
+          span {
+            @include rem(font-size, 14px);
+            color: $color-black-medium;
+            font-weight: normal;
+          }
+        }
+      }
+      .product-button-link {
+        @include rem((margin-top: 25px));
+        text-align: center;
+        button {
+          @include rem((padding: 10px 5px));
+          background: $color-green;
+          border: none;
+          color: $color-white;
+          border-radius: 5px;
+          width: 100%;
+          &:hover {
+            background: rgba($color-green,.8);
+          }
+        }
+      }
+    }
+  }
+}

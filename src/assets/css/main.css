@@ -1,7 +1,7 @@
 /* =========================================================
 * SmartAssistant - main file
 * Handcrafted by Markus Danek <markus.danek@gmail.com>
-* Last updated on 12.04.2016
+* Last updated on 14.04.2016
 * =========================================================
 * Contents:
 *   01    Util
@@ -27,52 +27,17 @@
 /* Large devices ~ Desktops (>= 1200px) */
 /* 01.2 - REM Function */
 /* 01.3 - Typography */
-@font-face {
-  font-family: "ASans";
-  src: url("../fonts/ALSANREG/ALSANREG.eot");
-  src: url("../fonts/ALSANREG/ALSANREG.eot") format("embedded-opentype"), url("../fonts/ALSANREG/ALSANREG.svg") format("svg"), url("../fonts/ALSANREG/ALSANREG.woff") format("woff"), url("../fonts/ALSANREG/ALSANREG.ttf") format("truetype");
-  font-weight: 400;
-  font-style: normal; }
-
-@font-face {
-  font-family: "ASans";
-  src: url("../fonts/ALSANREG/ALSANREG.eot");
-  src: url("../fonts/ALSANREG/ALSANREG.eot") format("embedded-opentype"), url("../fonts/ALSANREG/ALSANREG.svg") format("svg"), url("../fonts/ALSANREG/ALSANREG.woff") format("woff"), url("../fonts/ALSANREG/ALSANREG.ttf") format("truetype");
-  font-weight: 400;
-  font-style: normal; }
-
-@font-face {
-  font-family: "ASans-Bold";
-  src: url("../fonts/ALSANBOL/ALSANBOL.eot");
-  src: url("../fonts/ALSANBOL/ALSANBOL.eot") format("embedded-opentype"), url("../fonts/ALSANBOL/ALSANBOL.svg#ALSANBOL") format("svg"), url("../fonts/ALSANBOL/ALSANBOL.woff") format("woff"), url("../fonts/ALSANBOL/ALSANBOL.ttf") format("truetype");
-  font-weight: 400;
-  font-style: normal; }
-
-@font-face {
-  font-family: "ASans-Italic";
-  src: url("../fonts/ALSANITA/ALSANITA.eot");
-  src: url("../fonts/ALSANITA/ALSANITA.eot") format("embedded-opentype"), url("../fonts/ALSANITA/ALSANITA.svg#ALSANITA") format("svg"), url("../fonts/ALSANITA/ALSANITA.woff") format("woff"), url("../fonts/ALSANITA/ALSANITA.ttf") format("truetype");
-  font-weight: 400;
-  font-style: normal; }
-
-@font-face {
-  font-family: "ASans-Light";
-  src: url("../fonts/ALSANLIG/ALSANLIG.eot");
-  src: url("../fonts/ALSANLIG/ALSANLIG.eot") format("embedded-opentype"), url("../fonts/ALSANLIG/ALSANLIG.svg#ALSANLIG") format("svg"), url("../fonts/ALSANLIG/ALSANLIG.woff") format("woff"), url("../fonts/ALSANLIG/ALSANLIG.ttf") format("truetype");
-  font-weight: 400;
-  font-style: normal; }
-
 a, p {
   font-size: 18px;
   font-size: 1rem;
   line-height: 30px;
-  font-family: "ASans"; }
+  font-family: "Arial"; }
 
 ul li, ol li {
   font-size: 18px;
   font-size: 1rem;
   line-height: 30px;
-  font-family: "ASans"; }
+  font-family: "Arial"; }
 
 button, button.btn {
   font-size: 18px;
@@ -80,7 +45,7 @@ button, button.btn {
 
 h1, h2, h3,
 h4, h5, h6 {
-  font-family: "ASans";
+  font-family: "Arial";
   margin-top: 0;
   margin-bottom: 0; }
 
@@ -175,7 +140,7 @@ html {
   min-height: 100%; }
 
 body {
-  font-family: "ASans", "Helvetica Neue", "Helvetica", "Arial", "sans-serif";
+  font-family: "Arial", "Helvetica", "sans-serif";
   color: #4B4B4B; }
 
 .container {
@@ -317,3 +282,100 @@ body {
     border: none;
     height: 30px;
     width: 30px; }
+
+.personal-products {
+  margin-top: 50px;
+  margin-top: 2.77778rem; }
+  .personal-products h1 {
+    font-size: 24px;
+    font-size: 1.33333rem;
+    background: #6600a1;
+    text-align: center;
+    color: #FFFFFF; }
+  .personal-products .product-block {
+    margin: 10px 0;
+    margin: 0.55556rem 0;
+    padding: 10px;
+    padding: 0.55556rem;
+    border: 1px solid #F0F0F0; }
+    .personal-products .product-block .img img {
+      max-width: 100%; }
+    .personal-products .product-block .properties h3 {
+      border-bottom: 1px solid #F0F0F0;
+      text-transform: uppercase; }
+    .personal-products .product-block .properties ul {
+      margin: 5px 0;
+      margin: 0.27778rem 0;
+      padding-left: 0;
+      padding-left: 0; }
+      .personal-products .product-block .properties ul li {
+        list-style-type: none;
+        display: block; }
+        .personal-products .product-block .properties ul li input[type=checkbox].css-checkbox {
+          position: absolute;
+          z-index: -1000;
+          left: -1000px;
+          overflow: hidden;
+          clip: rect(0 0 0 0);
+          height: 1px;
+          width: 1px;
+          margin: -1px;
+          padding: 0;
+          border: 0; }
+        .personal-products .product-block .properties ul li input[type=checkbox].css-checkbox + label.css-label {
+          padding-left: 21px;
+          height: 16px;
+          display: inline-block;
+          line-height: 16px;
+          background-repeat: no-repeat;
+          background-position: 0 0;
+          font-size: 16px;
+          vertical-align: middle;
+          cursor: pointer; }
+        .personal-products .product-block .properties ul li input[type=checkbox].css-checkbox:checked + label.css-label {
+          background-position: 0 -16px; }
+        .personal-products .product-block .properties ul li label.css-label {
+          background-image: url("/assets/images/checkbox-sprite.png");
+          -webkit-touch-callout: none;
+          -webkit-user-select: none;
+          -khtml-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
+          user-select: none; }
+    .personal-products .product-block .properties a {
+      font-weight: bold;
+      text-decoration: none;
+      color: #4B4B4B; }
+      .personal-products .product-block .properties a i {
+        color: #6600a1; }
+      .personal-products .product-block .properties a:hover {
+        text-decoration: underline; }
+    .personal-products .product-block .get-product .price {
+      padding: 5px;
+      padding: 0.27778rem;
+      border: 1px solid #F0F0F0; }
+      .personal-products .product-block .get-product .price p {
+        font-size: 22px;
+        font-size: 1.22222rem;
+        text-align: center;
+        color: #6600a1;
+        font-weight: bold; }
+        .personal-products .product-block .get-product .price p span {
+          font-size: 14px;
+          font-size: 0.77778rem;
+          color: #4B4B4B;
+          font-weight: normal; }
+    .personal-products .product-block .get-product .product-button-link {
+      margin-top: 25px;
+      margin-top: 1.38889rem;
+      text-align: center; }
+      .personal-products .product-block .get-product .product-button-link button {
+        padding: 10px 5px;
+        padding: 0.55556rem 0.27778rem;
+        background: #9BC850;
+        border: none;
+        color: #FFFFFF;
+        border-radius: 5px;
+        width: 100%; }
+        .personal-products .product-block .get-product .product-button-link button:hover {
+          background: rgba(155, 200, 80, 0.8); }
