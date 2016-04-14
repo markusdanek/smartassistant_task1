@@ -251,37 +251,50 @@ body {
     .choose-glasses .glasses-wizard ul li.arrow.active::before {
       border-left: 15px solid rgba(102, 0, 161, 0); }
 
-.choose-glasses .facial-structure .item img {
-  max-width: 100%; }
+.choose-glasses .facial-structure .item,
+.choose-glasses .facial-dependency .item {
+  margin-top: 25px;
+  margin-top: 1.38889rem; }
+  .choose-glasses .facial-structure .item img,
+  .choose-glasses .facial-dependency .item img {
+    max-width: 100%; }
+  .choose-glasses .facial-structure .item .options,
+  .choose-glasses .facial-dependency .item .options {
+    background: #F0F0F0;
+    height: 50px; }
+    .choose-glasses .facial-structure .item .options input,
+    .choose-glasses .facial-dependency .item .options input {
+      margin: 20px 0 0 20px;
+      margin: 1.11111rem 0 0 1.11111rem; }
+    .choose-glasses .facial-structure .item .options span.info,
+    .choose-glasses .facial-dependency .item .options span.info {
+      margin-left: 5px;
+      margin-left: 0.27778rem;
+      padding: 5px 12px;
+      padding: 0.27778rem 0.66667rem;
+      font-style: italic;
+      background: #6600a1;
+      border-radius: 50%;
+      color: #FFFFFF; }
 
-.choose-glasses .facial-structure .item .options {
-  background: #F0F0F0;
-  height: 50px; }
-  .choose-glasses .facial-structure .item .options input {
-    margin: 20px 0 0 20px;
-    margin: 1.11111rem 0 0 1.11111rem; }
-  .choose-glasses .facial-structure .item .options span.info {
-    margin-left: 5px;
-    margin-left: 0.27778rem;
-    padding: 5px 12px;
-    padding: 0.27778rem 0.66667rem;
-    font-style: italic;
-    background: #6600a1;
-    border-radius: 50%;
-    color: #FFFFFF; }
+.choose-glasses .facial-dependency {
+  display: none; }
 
 .choose-glasses .navigation {
   position: relative;
   top: 20px;
   color: #6600a1;
   text-transform: uppercase; }
-  .choose-glasses .navigation button {
+  .choose-glasses .navigation .next button,
+  .choose-glasses .navigation .previous button {
     background: #6600a1;
     cursor: pointer;
     color: #FFFFFF;
     border: none;
     height: 30px;
     width: 30px; }
+  .choose-glasses .navigation .previous {
+    display: none; }
 
 .personal-products {
   margin-top: 50px;

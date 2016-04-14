@@ -41,8 +41,10 @@
       }
     }
   }
-  .facial-structure {
+  .facial-structure,
+  .facial-dependency {
     .item {
+      @include rem((margin-top: 25px));
       img {
         max-width: 100%;
       }
@@ -63,18 +65,27 @@
       }
     }
   }
+  .facial-dependency {
+    display: none;
+  }
   .navigation {
     position: relative;
     top: 20px;
     color: $color-purple;
     text-transform: uppercase;
-    button {
-      background: $color-purple;
-      cursor: pointer;
-      color: $color-white;
-      border: none;
-      height: 30px;
-      width: 30px;
+    .next,
+    .previous {
+      button {
+        background: $color-purple;
+        cursor: pointer;
+        color: $color-white;
+        border: none;
+        height: 30px;
+        width: 30px;
+      }
+    }
+    .previous {
+      display: none;
     }
   }
 }
