@@ -317,8 +317,8 @@ body {
       border-bottom: 1px solid #F0F0F0;
       text-transform: uppercase; }
     .personal-products .product-block .properties ul {
-      margin: 5px 0;
-      margin: 0.27778rem 0;
+      margin: 10px 0;
+      margin: 0.55556rem 0;
       padding-left: 0;
       padding-left: 0; }
       .personal-products .product-block .properties ul li {
@@ -356,6 +356,8 @@ body {
           -ms-user-select: none;
           user-select: none; }
     .personal-products .product-block .properties a {
+      font-size: 14px;
+      font-size: 0.77778rem;
       font-weight: bold;
       text-decoration: none;
       color: #4B4B4B; }
